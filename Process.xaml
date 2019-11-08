@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>396,692</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>396,1122</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -54,11 +54,11 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="376,632" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="376,1062" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="clientName" />
       <Variable x:TypeArguments="x:String" Name="clientCountry" />
@@ -71,69 +71,36 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_NavigateTo_WIDetails workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="System1\System1_NavigateTo_WIDetails.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_NavigateTo_WorkItems workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="System1\System1_NavigateTo_WorkItems.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_System1_URL">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString">
-            <mva:VisualBasicValue.Result>
-              <OutArgument x:TypeArguments="x:String" />
-            </mva:VisualBasicValue.Result>
-          </mva:VisualBasicValue>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_WorkItemID">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;WIID&quot;).ToString">
-            <mva:VisualBasicValue.Result>
-              <OutArgument x:TypeArguments="x:String" />
-            </mva:VisualBasicValue.Result>
-          </mva:VisualBasicValue>
-        </InArgument>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_ExtractClientInformation workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="System1\System1_ExtractClientInformation.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_NavigateTo_WIDetails workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="System1\System1_NavigateTo_WIDetails.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientName">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="clientName">
-            <mva:VisualBasicReference.Result>
-              <OutArgument x:TypeArguments="Location(x:String)" />
-            </mva:VisualBasicReference.Result>
-          </mva:VisualBasicReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientCountry">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="clientCountry">
-            <mva:VisualBasicReference.Result>
-              <OutArgument x:TypeArguments="Location(x:String)" />
-            </mva:VisualBasicReference.Result>
-          </mva:VisualBasicReference>
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientID">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="clientID">
-            <mva:VisualBasicReference.Result>
-              <OutArgument x:TypeArguments="Location(x:String)" />
-            </mva:VisualBasicReference.Result>
-          </mva:VisualBasicReference>
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_System1_URL">[in_Config("System1_URL").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_WorkItemID">[in_TransactionItem("WIID").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SHA1Online_GetHashCode workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="SHA1Online\SHA1Online_GetHashCode.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_ExtractClientInformation workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="System1\System1_ExtractClientInformation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_HashFormula">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientID+&quot;-&quot;+clientName+&quot;-&quot;+clientCountry">
-            <mva:VisualBasicValue.Result>
-              <OutArgument x:TypeArguments="x:String" />
-            </mva:VisualBasicValue.Result>
-          </mva:VisualBasicValue>
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_HashResult">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="HashResult">
-            <mva:VisualBasicReference.Result>
-              <OutArgument x:TypeArguments="Location(x:String)" />
-            </mva:VisualBasicReference.Result>
-          </mva:VisualBasicReference>
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientName">[clientName]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientCountry">[clientCountry]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientID">[clientID]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_UpdateWorkItem workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="System1\System1_UpdateWorkItem.xaml">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[clientID+&quot;,&quot;]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[clientName+&quot;,&quot;]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[clientCountry+&quot;,&quot;]" TextWriter="{x:Null}" />
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SHA1Online_GetHashCode workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SHA1Online\SHA1Online_GetHashCode.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_HashFormula">[clientID+"-"+clientName+"-"+clientCountry]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_HashResult">[HashResult]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_UpdateWorkItem workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="System1\System1_UpdateWorkItem.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="new_status" />
         <InArgument x:TypeArguments="x:String" x:Key="in_HashResult">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="HashResult">
             <mva:VisualBasicValue.Result>
@@ -141,7 +108,6 @@
             </mva:VisualBasicValue.Result>
           </mva:VisualBasicValue>
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="new_status" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
