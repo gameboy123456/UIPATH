@@ -1247,9 +1247,9 @@
     "restore": {
       "projectUniqueName": "UiPath_REFrameWork",
       "projectName": "UiPath_REFrameWork",
-      "projectPath": "C:\\Users\\bgao6\\link\\ReFrameWork\\.local",
+      "projectPath": "C:\\UIPATH\\ReFrameWork\\.local",
       "packagesPath": "C:\\Users\\bgao6\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bgao6\\link\\ReFrameWork\\.local"
+      "outputPath": "C:\\UIPATH\\ReFrameWork\\.local"
     },
     "frameworks": {
       "net461": {
