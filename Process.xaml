@@ -111,13 +111,7 @@
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System1_UpdateWorkItem workflow" sap:VirtualizedContainerService.HintSize="436,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="System1\System1_UpdateWorkItem.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="new_status">Completed</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_HashResult">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="HashResult">
-            <mva:VisualBasicValue.Result>
-              <OutArgument x:TypeArguments="x:String" />
-            </mva:VisualBasicValue.Result>
-          </mva:VisualBasicValue>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_HashResult">[HashResult]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
